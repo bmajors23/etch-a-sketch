@@ -1,5 +1,37 @@
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
     background: tan;
+}
+
+.container {
+    height: 50vh;
+    width: 50vh;
+    background-color: white;
+    border-style: double;
+    border-width: 5px;
+    border-color: black;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.columns {
+    height: 100%;
+    width: 100%;
+    border: solid .1px black;
+}
+
+.boxes {
+    height: 100%;
+    width: 100%;
+    border: solid .1px black;
 }
