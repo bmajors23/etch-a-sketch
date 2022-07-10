@@ -2,12 +2,33 @@ const container = document.querySelector(".container");
 let box;
 let slider = document.getElementById("sliderID");
 let gridSize = slider.value;
+let penColor = "black";
 const clearBtn = document.querySelector(".clearBtn");
 clearBtn.addEventListener("click", () => {
     clear();
 })
+const redBtn = document.getElementById("redBtn");
+const blueBtn = document.getElementById("blueBtn");
+const greenBtn = document.getElementById("greenBtn");
+const yellowBtn = document.getElementById("yellowBtn");
+const blackBtn = document.getElementById("blackBtn");
 createGrid();
 
+redBtn.addEventListener("click", () => {
+    penColor = "red";
+})
+blueBtn.addEventListener("click", () => {
+    penColor = "blue";
+})
+greenBtn.addEventListener("click", () => {
+    penColor = "green";
+})
+yellowBtn.addEventListener("click", () => {
+    penColor = "yellow";
+})
+blackBtn.addEventListener("click", () => {
+    penColor = "red";
+})
 
 function createGrid() {
     for (let i = 0; i < gridSize; i++) {
@@ -23,7 +44,7 @@ function createGrid() {
         const boxes = document.querySelectorAll(".boxes");
         boxes.forEach(box => {
             box.addEventListener("mouseover", () => {
-                box.setAttribute("style", "background-color: black");
+                box.setAttribute("style", `background-color: ${penColor}`);
             });
         });
 };
@@ -45,6 +66,6 @@ while (container.firstChild) {
 function clear() {
     const boxes = document.querySelectorAll(".boxes");
     boxes.forEach(box => {
-        box.setAttribute("style", "background-color: black");
+        box.setAttribute("style", "background-color: none");
     });
 };
